@@ -16,9 +16,7 @@ class Directory extends Component {
     }
 
     renderSelectedCampsite(campsite) {
-            return(
-
-            
+            return( 
         <CampsiteInfo campsite = {campsite} />
 
             );
@@ -28,7 +26,7 @@ class Directory extends Component {
             return ( 
                 <div key = {campsite.id} className = "col-md-5 m-1">
                         <Card onClick = { () => this.onCampsiteSelect(campsite)} >
-                                <CardImg width = "100%" src = {campsite.image}alt = {campsite.name } />
+                                <CardImg width = "100%" src = {campsite.image}alt = {campsite.name} />
                                 <CardImgOverlay >
                                         <CardTitle > {campsite.name } </CardTitle> 
                              </CardImgOverlay> 
