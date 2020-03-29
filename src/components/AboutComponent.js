@@ -3,11 +3,15 @@ import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'r
 import { Link } from 'react-router-dom';
 
 
+
 function About(props) {
 
-    const partners = props.partners.map(partner => {
+    const partners =props.partners.map(partner=> {
         return (
-            <h5>{partner.name}</h5>
+            <div>
+                <li key= {partner.id}>{partner.name}</li>
+                
+            </div>
         );
     });
 
