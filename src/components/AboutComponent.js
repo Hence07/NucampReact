@@ -15,6 +15,12 @@ function About(props) {
         );
     });
 
+    // function RenderPartner({partner}){
+    //     return(
+
+    //     );
+    // }
+
     return (
         <div className="container">
             <div className="row">
