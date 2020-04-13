@@ -15,12 +15,15 @@ function RenderPartner({partners}){
         </React.Fragment>
     )
     }
+        //
+    return <div />
 }
 function About(props) {
 
     const partners = props.partners.map(partner => {
         return (
-            <h5>{partner.name}</h5>
+        
+        <Media li key={partner.id}><RenderPartner partners ={partner} /></Media>
         );
     });
 
