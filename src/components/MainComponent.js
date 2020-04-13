@@ -2,19 +2,17 @@ import React, { Component } from 'react';
 import { Navbar, NavbarBrand } from 'reactstrap';
 import Directory from './DirectoryComponent';
 import CampsiteInfo from './CampsiteInfoComponent';
-import { CAMPSITES } from '../shared/campsites';
 import { Switch, Route, Redirect, withRouter} from 'react-router-dom';
 import About from './AboutComponent';
 import Contact from './ContactComponent';
 import Home from './HomeComponent';
-import { COMMENTS } from '../shared/comments';
-import { PARTNERS } from '../shared/partners';
-import { PROMOTIONS } from '../shared/promotions';
+
+
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import { connect } from 'react-redux';
 
-
+// These are what we getting from  redux  store state and passing in it as props to the main component
   const mapStateToProps = state => {
       return {
           campsites: state.campsites,
@@ -28,15 +26,9 @@ class Main extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            campsites: CAMPSITES,
-            comments: COMMENTS,
-            partners: PARTNERS,
-            promotions: PROMOTIONS
-        };
-          
+        this.state = {}
     }
-     
+
     
 render() {
     
@@ -51,7 +43,9 @@ render() {
         };
 
          const CampsiteWithId = ({match}) => {
+             
             return (
+            
                 <CampsiteInfo campsite={this.props.campsites.filter(campsite => campsite.id === +match.params.campsiteId)[0]} 
                   comments={this.props.comments.filter(comment => comment.campsiteId === +match.params.campsiteId)} />
             );

@@ -1,25 +1,28 @@
 import React from 'react';
 import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import { PARTNERS } from '../shared/partners';
 
-
-
+function RenderPartner({partners}){
+    if (partners) {
+    const{id, name, image, featured, description} = partners
+    return(
+        <React.Fragment >
+            <Media object  src = {image} alt={name} width="150px"
+             />
+            <Media body  className="ml-5 mb-4">  <Media heading > {name}</Media> {description}</Media>
+            
+        </React.Fragment>
+    )
+    }
+}
 function About(props) {
 
-    const partners =props.partners.map(partner=> {
+    const partners = props.partners.map(partner => {
         return (
-            <div>
-                <li key= {partner.id}>{partner.name}</li>
-                
-            </div>
+            <h5>{partner.name}</h5>
         );
     });
-
-    // function RenderPartner({partner}){
-    //     return(
-
-    //     );
-    // }
 
     return (
         <div className="container">
