@@ -6,8 +6,6 @@ import { Switch, Route, Redirect, withRouter} from 'react-router-dom';
 import About from './AboutComponent';
 import Contact from './ContactComponent';
 import Home from './HomeComponent';
-
-
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import { connect } from 'react-redux';
